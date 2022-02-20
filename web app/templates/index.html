@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 40px; width: 50%;">
+        <h3> BERT Model </h3>
+       <p>
+           BERT, which stands for Bidirectional Encoder Representations from Transformers, is based on Transformers, a deep learning model in which every output element is connected to every input element, and the weightings between them are dynamically calculated based upon their connection. (In NLP, this process is called attention.)
+Historically, language models could only read text input sequentially -- either left-to-right or right-to-left -- but couldn't do both at the same time. BERT is different because it is designed to read in both directions at once. This capability, enabled by the introduction of Transformers, is known as bidirectionality.
+Using this bidirectional capability, BERT is pre-trained on two different, but related, NLP tasks: Masked Language Modeling and Next Sentence Prediction.
+           We chose to build our sentiment analysis classifier on top of BERT for the following reasons:
+       </p>
+        <ul>
+          <li>State of the art model for machine translation and natural language tasks</li>
+          <li>Can be easily parallelized through the GPU using CUDA kernels</li>
+          <li>Can be easly tuned to fit a given task</li>
+        </ul>
+
+    </div>
+
+    <div class="container" style="margin-top: 40px; width: 50%; margin-bottom: 40px">
+        <img src="https://i0.wp.com/neptune.ai/wp-content/uploads/Attention_diagram_transformer.png?resize=1024%2C589&ssl=1" height="350px">
+        <br>
+        <br>
+        <p style="margin-left: 150px; font-size: 8px; font-color:light-grey;">Source: https://towardsdatascience.com/breaking-bert-down-430461f60efb<p>
+    </div>
+{% endblock %}
+
+

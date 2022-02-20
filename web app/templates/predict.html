@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 40px; width: 50%;">
+        <h2>Predict</h2>
+        <form action="/predict" method="POST">
+            {% for param in parameters %}
+            <div class="form-group">
+                <label for="{{param}}" class=""><h6>{{param}}:</h6></label>
+                <textarea type="text" class="form-control" name="{{param}}" id="{{param}}" placeholder="Enter {{param}}"></textarea>
+                <br>
+            </div>
+            {% endfor %}
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% if f != 0%}
+        <div class="container" style="margin-left: 15%;">
+            <div class="container" style="margin-top: 40px; width: 50%;">
+            <div class="card text-white bg-{{color}} mb-3" style="max-width: 18rem;">
+              <div class="card-header">Predicton</div>
+              <div class="card-body">
+                <h5 class="card-title">{{prediction}}</h5>
+              </div>
+            </div>
+         </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}
+
+
